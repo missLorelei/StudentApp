@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudApp.Context;
+using StudApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,13 @@ namespace StudApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (StudentContext db = new StudentContext())
+            {
+                Student st1 = new Student();
+                db.Students.Add(st1);
+                db.SaveChanges();
+            }
+                return View();
         }
 
         public ActionResult About()
