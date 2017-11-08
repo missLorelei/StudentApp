@@ -1,2 +1,2 @@
 # StudentApp
-Here must be only working update!
+Here preview of project, before pull to master banch
